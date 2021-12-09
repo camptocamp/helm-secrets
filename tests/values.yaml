@@ -1,0 +1,17 @@
+dockerregistry:
+  https://index.docker.io/v1/:
+    email: docker-hub@camptocamp.com
+    username: c2cgisbot
+    password: '1234'
+  docker.io:
+    email: docker-hub@camptocamp.com
+    username: c2cgisbot
+    password: '1234'
+  ghcr.io:
+    email: geospatial-bot@camptocamp.com
+    username: c2c-bot-gis-ci
+    password: '1234'
+
+secrets:
+  test: toto
+  test2: toto2

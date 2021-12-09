@@ -1,0 +1,33 @@
+---
+# Source: custom-pod/templates/dockerhub-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: custom-custom-pod-dockerregistry
+  labels:
+    helm.sh/chart: custom-pod-0.1.0
+    app.kubernetes.io/version: "1.0"
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: custom-pod
+    app.kubernetes.io/instance: custom
+    app.kubernetes.io/component: main
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: ewogICJhdXRocyI6IHsKICAgICJkb2NrZXIuaW8iOiB7CiAgICAgICJhdXRoIjogIll6SmpaMmx6WW05ME9qRXlNelE9IiwKICAgICAgInVzZXJuYW1lIjogImMyY2dpc2JvdCIsCiAgICAgICJwYXNzd29yZCI6ICIxMjM0IiwKICAgICAgImVtYWlsIjogImRvY2tlci1odWJAY2FtcHRvY2FtcC5jb20iCiAgICB9LAogICAgImdoY3IuaW8iOiB7CiAgICAgICJhdXRoIjogIll6SmpMV0p2ZEMxbmFYTXRZMms2TVRJek5BPT0iLAogICAgICAidXNlcm5hbWUiOiAiYzJjLWJvdC1naXMtY2kiLAogICAgICAicGFzc3dvcmQiOiAiMTIzNCIsCiAgICAgICJlbWFpbCI6ICJnZW9zcGF0aWFsLWJvdEBjYW1wdG9jYW1wLmNvbSIKICAgIH0sCiAgICAiaHR0cHM6Ly9pbmRleC5kb2NrZXIuaW8vdjEvIjogewogICAgICAiYXV0aCI6ICJZekpqWjJselltOTBPakV5TXpRPSIsCiAgICAgICJ1c2VybmFtZSI6ICJjMmNnaXNib3QiLAogICAgICAicGFzc3dvcmQiOiAiMTIzNCIsCiAgICAgICJlbWFpbCI6ICJkb2NrZXItaHViQGNhbXB0b2NhbXAuY29tIgogICAgfSwKICAgICJleGFtcGxlLmNvbSI6IHsiYXV0aCI6ICJibTl3WlRwdWIzQmwifQogIH0KfQ==
+---
+# Source: custom-pod/templates/secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: custom-custom-pod
+  labels:
+    helm.sh/chart: custom-pod-0.1.0
+    app.kubernetes.io/version: "1.0"
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: custom-pod
+    app.kubernetes.io/instance: custom
+    app.kubernetes.io/component: main
+type: generic
+data:
+  test: dG90bw==
+  test2: dG90bzI=
