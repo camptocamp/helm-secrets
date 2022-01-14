@@ -14,4 +14,18 @@ entries:
     urls:
     - https://github.com/camptocamp/helm-secrets/releases/download/0.1.0/custom-pod-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-13T14:56:06.818333287Z"
+  secrets:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-01-14T08:25:10.083609016Z"
+    dependencies:
+    - name: common
+      repository: https://camptocamp.github.io/helm-common
+      version: 0.1.4
+    description: A chart to manage the application secrets
+    digest: adf0da4c7b9e1b08d24531bebe5ed4f32b4a715ebaa3afed6fc3bcdc7aba6bac
+    name: secrets
+    urls:
+    - https://github.com/camptocamp/helm-secrets/releases/download/0.1.1/secrets-0.1.1.tgz
+    version: 0.1.1
+generated: "2022-01-14T08:25:10.083614016Z"
