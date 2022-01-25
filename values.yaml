@@ -1,11 +1,16 @@
 nameOverride: ''
 fullnameOverride: ''
-#
-#dockerregistry:
+
+dockerregistry: {}
 #  registry-url:
 #    email: docker-hub@camptocamp.com
 #    username: dockerhubc2c
 #    password: xxx
 
-#secrets:
-#  key: value
+secrets: {}
+#  key1:
+#    value: value
+#  key2:
+#    type: basicAuth
+#    username: value
+#    password: value

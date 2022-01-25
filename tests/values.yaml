@@ -13,5 +13,11 @@ dockerregistry:
     password: '1234'
 
 secrets:
-  test: toto
-  test2: toto2
+  test:
+    value: toto
+  test2:
+    value: toto2
+  test3:
+    type: basicAuth
+    username: toto
+    password: toto
