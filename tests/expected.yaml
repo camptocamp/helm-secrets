@@ -5,7 +5,7 @@ kind: Secret
 metadata:
   name: custom-secrets-dockerregistry
   labels:
-    helm.sh/chart: secrets-0.1.0
+    helm.sh/chart: secrets
     app.kubernetes.io/version: "1.0"
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: secrets
@@ -21,7 +21,7 @@ kind: Secret
 metadata:
   name: custom-secrets
   labels:
-    helm.sh/chart: secrets-0.1.0
+    helm.sh/chart: secrets
     app.kubernetes.io/version: "1.0"
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: secrets
