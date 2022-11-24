@@ -1,5 +1,40 @@
 # Changelog
 
+## [0.3.0](https://github.com/camptocamp/helm-secrets/tree/0.3.0) (2022-11-14)
+
+[Full Changelog](https://github.com/camptocamp/helm-secrets/compare/0.2.2...0.3.0)
+
+#### :books: Documentation
+
+- Add generated changelog [\#48](https://github.com/camptocamp/helm-secrets/pull/48) ([sbrunner](https://github.com/sbrunner))
+
+#### :wrench: Build, CI, Tests, Code style
+
+- Fix repository in workflow used to delete old workflow runs [\#63](https://github.com/camptocamp/helm-secrets/pull/63) ([sbrunner](https://github.com/sbrunner))
+- Fix repository in workflow used to delete old workflow runs [\#62](https://github.com/camptocamp/helm-secrets/pull/62) ([sbrunner](https://github.com/sbrunner))
+- Add workflow to delete old workflow runs [\#61](https://github.com/camptocamp/helm-secrets/pull/61) ([sbrunner](https://github.com/sbrunner))
+- Use the standard name for pull request checks workflow [\#60](https://github.com/camptocamp/helm-secrets/pull/60) ([sbrunner](https://github.com/sbrunner))
+- Fix the get config in changelog workflow [\#58](https://github.com/camptocamp/helm-secrets/pull/58) ([sbrunner](https://github.com/sbrunner))
+- Schedule Renovate on early Saturday [\#56](https://github.com/camptocamp/helm-secrets/pull/56) ([sbrunner](https://github.com/sbrunner))
+- Fix the changelog generator workflow [\#54](https://github.com/camptocamp/helm-secrets/pull/54) ([sbrunner](https://github.com/sbrunner))
+- Clean all the images already present in the image given by GitHub [\#53](https://github.com/camptocamp/helm-secrets/pull/53) ([sbrunner](https://github.com/sbrunner))
+- Update the changelog generation workflow [\#52](https://github.com/camptocamp/helm-secrets/pull/52) ([sbrunner](https://github.com/sbrunner))
+- Remove Dependabot configuration [\#51](https://github.com/camptocamp/helm-secrets/pull/51) ([sbrunner](https://github.com/sbrunner))
+- Update the changelog [\#49](https://github.com/camptocamp/helm-secrets/pull/49) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Don't run 2 CI jobs in a pull request [\#44](https://github.com/camptocamp/helm-secrets/pull/44) ([sbrunner](https://github.com/sbrunner))
+- Configure Renovate [\#43](https://github.com/camptocamp/helm-secrets/pull/43) ([sbrunner](https://github.com/sbrunner))
+
+#### :package: Dependencies update
+
+- Update Helm release common to v0.3.0 [\#65](https://github.com/camptocamp/helm-secrets/pull/65) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency c2cciutils to v1.3.11 [\#64](https://github.com/camptocamp/helm-secrets/pull/64) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency c2cciutils to v1.3.0 [\#55](https://github.com/camptocamp/helm-secrets/pull/55) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency c2cciutils to v1.2.1 [\#50](https://github.com/camptocamp/helm-secrets/pull/50) ([renovate[bot]](https://github.com/apps/renovate))
+- Update azure/setup-helm action to v3 [\#47](https://github.com/camptocamp/helm-secrets/pull/47) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency c2cciutils to v1.2.0 [\#46](https://github.com/camptocamp/helm-secrets/pull/46) ([renovate[bot]](https://github.com/apps/renovate))
+- Update Helm release common to v0.2.3 [\#38](https://github.com/camptocamp/helm-secrets/pull/38) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v3 [\#37](https://github.com/camptocamp/helm-secrets/pull/37) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.2.2](https://github.com/camptocamp/helm-secrets/tree/0.2.2) (2022-05-19)
 
 [Full Changelog](https://github.com/camptocamp/helm-secrets/compare/0.2.1...0.2.2)
