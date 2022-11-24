@@ -1,3 +1,6 @@
+annotations:
+  testAnnotation: annotation value
+
 dockerregistry:
   https://index.docker.io/v1/:
     email: docker-hub@camptocamp.com
