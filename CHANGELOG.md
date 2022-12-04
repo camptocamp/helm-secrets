@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.1](https://github.com/camptocamp/helm-secrets/tree/0.3.1) (2022-11-24)
+
+[Full Changelog](https://github.com/camptocamp/helm-secrets/compare/0.3.0...0.3.1)
+
+#### :sparkles: Enhancements
+
+- Add annotations [\#69](https://github.com/camptocamp/helm-secrets/pull/69) ([sbrunner](https://github.com/sbrunner))
+
+#### :wrench: Build, CI, Tests, Code style
+
+- Upgrade deprecated set-output commands [\#68](https://github.com/camptocamp/helm-secrets/pull/68) ([sbrunner](https://github.com/sbrunner))
+- Update the changelog [\#66](https://github.com/camptocamp/helm-secrets/pull/66) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
+
 ## [0.3.0](https://github.com/camptocamp/helm-secrets/tree/0.3.0) (2022-11-14)
 
 [Full Changelog](https://github.com/camptocamp/helm-secrets/compare/0.2.2...0.3.0)
