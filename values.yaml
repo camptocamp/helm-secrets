@@ -14,3 +14,6 @@ secrets: {}
 #    type: basicAuth
 #    username: value
 #    password: value
+
+# Generate a ConfigMap with CHART_NAME, RELEASE_NAME, RELEASE_NAMESPACE
+metadata: true

@@ -36,3 +36,22 @@ data:
   test: dG90bw==
   test2: dG90bzI=
   test3: "UW1GemFXTWdKU0Z6S0R4dWFXdytLVHAwYjNSdg=="
+---
+# Source: secrets/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: custom-secrets
+  labels:
+    helm.sh/chart: secrets
+    app.kubernetes.io/version: "1.0"
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: secrets
+    app.kubernetes.io/instance: custom
+    app.kubernetes.io/component: main
+  annotations:
+    testAnnotation: annotation value
+data:
+  CHART_NAME: secrets
+  RELEASE_NAME: custom
+  RELEASE_NAMESPACE: default
