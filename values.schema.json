@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "HELM secrets configuration",
+  "definitions": {
+    "nameOverride": {
+      "type": "string",
+      "description": "[helm-common] Override the name"
+    },
+    "fullnameOverride": {
+      "type": "string",
+      "description": "[helm-common] Override the fullname"
+    },
+    "releaseTrunc": {
+      "type": "integer",
+      "description": "[helm-common] The release trunk length",
+      "default": 20
+    },
+    "prefixTrunc": {
+      "type": "integer",
+      "description": "[helm-common] The prefix trunk length (release anf chart name)",
+      "default": 40
+    },
+    "serviceName": {
+      "type": "string",
+      "description": "[helm-common] The name of the service (not Kubernetes service), this will postfix the name"
+    },
+    "labels": {
+      "type": "object",
+      "description": "[helm-common] Pod labels",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "annotations": {
+      "type": "object",
+      "description": "[helm-common] Pod annotations",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "common": {},
+    "nameOverride": {
+      "$ref": "#/definitions/nameOverride"
+    },
+    "fullnameOverride": {
+      "$ref": "#/definitions/fullnameOverride"
+    },
+    "serviceName": {
+      "$ref": "#/definitions/serviceName"
+    },
+    "releaseTrunc": {
+      "$ref": "#/definitions/releaseTrunc"
+    },
+    "prefixTrunc": {
+      "$ref": "#/definitions/prefixTrunc"
+    },
+    "labels": {
+      "$ref": "#/definitions/labels"
+    },
+    "annotations": {
+      "$ref": "#/definitions/annotations"
+    },
+    "metadata": {
+      "type": "boolean",
+      "description": "Generate a config map with some metadata related to the chart"
+    },
+    "secrets": {
+      "type": "object",
+      "description": "Secrets configuration",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "Secret from a direct value",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "Type of the secret",
+                "enum": ["value"],
+                "default": "value"
+              },
+              "value": {
+                "type": "string",
+                "description": "Value of the secret"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Secret for a basic auth",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "Type of the secret",
+                "enum": ["basicAuth"]
+              },
+              "user": {
+                "type": "string",
+                "description": "Username"
+              },
+              "password": {
+                "type": "string",
+                "description": "Password"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "dockerregistry": {
+      "type": "object",
+      "description": "Docker registries authentication",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "Username"
+          },
+          "password": {
+            "type": "string",
+            "description": "Password"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email"
+          }
+        },
+        "required": ["username", "password"]
+      }
+    }
+  }
+}

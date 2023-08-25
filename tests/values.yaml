@@ -22,5 +22,5 @@ secrets:
     value: toto2
   test3:
     type: basicAuth
-    username: toto
+    user: toto
     password: toto
