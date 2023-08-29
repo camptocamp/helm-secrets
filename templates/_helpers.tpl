@@ -9,7 +9,7 @@
       "email": {{ $conf.email | quote }}
     },
     {{- end }}
-    "example.com": {"auth": "bm9wZTpub3Bl"}
+    "fix-end-comma": {"auth": ""}
   }
 }
 {{- end }}
