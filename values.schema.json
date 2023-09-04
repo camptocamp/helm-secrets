@@ -42,6 +42,7 @@
   },
   "additionalProperties": false,
   "properties": {
+    "global": {},
     "common": {},
     "nameOverride": {
       "$ref": "#/definitions/nameOverride"
