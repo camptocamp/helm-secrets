@@ -2,6 +2,7 @@
 
 ## Properties
 
+- **`global`**
 - **`common`**
 - **`nameOverride`**: Refer to _[#/definitions/nameOverride](#definitions/nameOverride)_.
 - **`fullnameOverride`**: Refer to _[#/definitions/fullnameOverride](#definitions/fullnameOverride)_.
