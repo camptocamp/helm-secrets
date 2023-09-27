@@ -18,7 +18,7 @@
     },
     "prefixTrunc": {
       "type": "integer",
-      "description": "[helm-common] The prefix trunk length (release anf chart name)",
+      "description": "[helm-common] The prefix trunk length (release and chart name)",
       "default": 40
     },
     "serviceName": {
@@ -67,7 +67,7 @@
     },
     "metadata": {
       "type": "boolean",
-      "description": "Generate a config map with some metadata related to the chart"
+      "description": "Generate a ConfigMap with some metadata related to the chart"
     },
     "secrets": {
       "type": "object",
@@ -94,7 +94,7 @@
           {
             "type": "object",
             "additionalProperties": false,
-            "description": "Secret for a basic auth",
+            "description": "Secret for a basic authentication",
             "properties": {
               "type": {
                 "type": "string",
