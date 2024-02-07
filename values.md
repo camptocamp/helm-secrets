@@ -13,7 +13,7 @@
 - **`annotations`**: Refer to _[#/definitions/annotations](#definitions/annotations)_.
 - **`metadata`** _(boolean)_: Generate a ConfigMap with some metadata related to the chart.
 - **`secrets`** _(object)_: Secrets configuration. Can contain additional properties.
-  - **Additional Properties**
+  - **Additional properties**
     - **One of**
       - _object_: Secret from a direct value. Cannot contain additional properties.
         - **`type`** _(string)_: Type of the secret. Must be one of: `["value"]`. Default: `"value"`.
@@ -23,7 +23,7 @@
         - **`user`** _(string)_: Username.
         - **`password`** _(string)_: Password.
 - **`dockerregistry`** _(object)_: Docker registries authentication. Can contain additional properties.
-  - **Additional Properties** _(object)_: Cannot contain additional properties.
+  - **Additional properties** _(object)_: Cannot contain additional properties.
     - **`username`** _(string, required)_: Username.
     - **`password`** _(string, required)_: Password.
     - **`email`** _(string)_: Email.
@@ -36,6 +36,6 @@
 - <a id="definitions/prefixTrunc"></a>**`prefixTrunc`** _(integer)_: [helm-common] The prefix trunk length (release and chart name). Default: `40`.
 - <a id="definitions/serviceName"></a>**`serviceName`** _(string)_: [helm-common] The name of the service (not Kubernetes service), this will postfix the name.
 - <a id="definitions/labels"></a>**`labels`** _(object)_: [helm-common] Pod labels. Can contain additional properties.
-  - **Additional Properties** _(string)_
+  - **Additional properties** _(string)_
 - <a id="definitions/annotations"></a>**`annotations`** _(object)_: [helm-common] Pod annotations. Can contain additional properties.
-  - **Additional Properties** _(string)_
+  - **Additional properties** _(string)_
