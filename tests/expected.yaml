@@ -37,6 +37,25 @@ data:
   test2: dG90bzI=
   test3: "UW1GemFXTWdkRzkwYnpwMGIzUnY="
 ---
+# Source: secrets/templates/configmap-metadata.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: custom-secrets-metadata
+  labels:
+    helm.sh/chart: secrets
+    app.kubernetes.io/version: "1.0"
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: secrets
+    app.kubernetes.io/instance: custom
+    app.kubernetes.io/component: main
+  annotations:
+    testAnnotation: annotation value
+data:
+  CHART_NAME: secrets
+  RELEASE_NAME: custom
+  RELEASE_NAMESPACE: default
+---
 # Source: secrets/templates/configmap.yaml
 apiVersion: v1
 kind: ConfigMap
@@ -52,6 +71,15 @@ metadata:
   annotations:
     testAnnotation: annotation value
 data:
-  CHART_NAME: secrets
-  RELEASE_NAME: custom
-  RELEASE_NAMESPACE: default
+  testJson: |-
+    {"titi":"titi","toto":"toto","tutu":"tutu"}
+  testMultiLine: |-
+    toto2
+    titi
+    tutu
+  testSingleLine: |-
+    toto
+  testYaml: |-
+    titi: titi
+    toto: toto
+    tutu: tutu
