@@ -1,11 +1,23 @@
-{{- if .Values.metadata }}
+{{- with .Values.configMap }}
+---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ include "common.fullname" ( dict "root" $ "service" $.Values ) }}
   {{- include "common.metadata" ( dict "root" $ "service" $.Values ) | nindent 2 }}
 data:
-  CHART_NAME: {{ .Chart.Name }}
-  RELEASE_NAME: {{ .Release.Name }}
-  RELEASE_NAMESPACE: {{ .Release.Namespace }}
+{{- range $key, $value := . }}
+{{- if eq ( default "value" $value.type ) "value" }}
+  {{ $key }}: |-
+{{ $value.value | indent 4 }}
+{{- end }}
+{{- if eq $value.type "yaml" }}
+  {{ $key }}: |-
+{{ $value.value | toYaml | indent 4 }}
+{{- end }}
+{{- if eq $value.type "json" }}
+  {{ $key }}: |-
+{{ $value.value | toJson | indent 4 }}
+{{- end }}
+{{- end }}
 {{- end }}

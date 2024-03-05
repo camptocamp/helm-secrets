@@ -24,3 +24,24 @@ secrets:
     type: basicAuth
     user: toto
     password: toto
+
+configMap:
+  testSingleLine:
+    value: toto
+  testMultiLine:
+    value: |-
+      toto2
+      titi
+      tutu
+  testYaml:
+    type: yaml
+    value:
+      toto: toto
+      titi: titi
+      tutu: tutu
+  testJson:
+    type: json
+    value:
+      toto: toto
+      titi: titi
+      tutu: tutu

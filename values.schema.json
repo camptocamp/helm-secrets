@@ -136,6 +136,63 @@
         },
         "required": ["username", "password"]
       }
+    },
+    "configMap": {
+      "type": "object",
+      "description": "ConfigMap configuration",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "ConfigMap value",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "Type of the ConfigMap",
+                "enum": ["string"],
+                "default": "string"
+              },
+              "value": {
+                "type": "string",
+                "description": "Value of the ConfigMap value"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "description": "ConfigMap YAML value",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "Type of the ConfigMap",
+                "enum": ["yaml"]
+              },
+              "value": {
+                "type": "object",
+                "description": "Value of the ConfigMap value as YAML"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "description": "ConfigMap JSON value",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "Type of the ConfigMap",
+                "enum": ["json"]
+              },
+              "value": {
+                "type": "object",
+                "description": "Value of the ConfigMap value as JSON"
+              }
+            }
+          }
+        ]
+      }
     }
   }
 }

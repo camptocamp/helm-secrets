@@ -27,6 +27,18 @@
     - **`username`** _(string, required)_: Username.
     - **`password`** _(string, required)_: Password.
     - **`email`** _(string)_: Email.
+- **`configMap`** _(object)_: ConfigMap configuration. Can contain additional properties.
+  - **Additional properties**
+    - **One of**
+      - _object_: ConfigMap value. Cannot contain additional properties.
+        - **`type`** _(string)_: Type of the ConfigMap. Must be one of: `["string"]`. Default: `"string"`.
+        - **`value`** _(string)_: Value of the ConfigMap value.
+      - _object_: ConfigMap YAML value. Cannot contain additional properties.
+        - **`type`** _(string)_: Type of the ConfigMap. Must be one of: `["yaml"]`.
+        - **`value`** _(object)_: Value of the ConfigMap value as YAML.
+      - _object_: ConfigMap JSON value. Cannot contain additional properties.
+        - **`type`** _(string)_: Type of the ConfigMap. Must be one of: `["json"]`.
+        - **`value`** _(object)_: Value of the ConfigMap value as JSON.
 
 ## Definitions
 
