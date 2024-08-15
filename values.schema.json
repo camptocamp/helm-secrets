@@ -69,6 +69,36 @@
       "type": "boolean",
       "description": "Generate a ConfigMap with some metadata related to the chart"
     },
+    "external": {
+      "type": "boolean",
+      "description": "Secrets from external sources"
+    },
+    "externalSecrets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "refreshInterval": {
+          "type": "string",
+          "description": "The refresh interval like 1h, 1m, 1s"
+        },
+        "secretStoreRef": {
+          "type": "object",
+          "description": "defines which SecretStore to fetch the ExternalSecret data."
+        },
+        "dataFrom": {
+          "type": "array",
+          "description": "used to fetch all properties from a specific Provider data."
+        },
+        "data": {
+          "type": "object",
+          "description": "Data defines the connection between the Kubernetes Secret keys and the Provider data.",
+          "additionalProperties": {
+            "type": "object",
+            "description": "defines the connection between the Kubernetes Secret key and the Provider data. The map key became the secretKey"
+          }
+        }
+      }
+    },
     "secrets": {
       "type": "object",
       "description": "Secrets configuration",
@@ -114,6 +144,14 @@
         ]
       }
     },
+    "dockerregistryRefreshInterval": {
+      "type": "string",
+      "description": "The refresh interval like 1h, 1m, 1s"
+    },
+    "dockerregistrySecretStoreRef": {
+      "type": "object",
+      "description": "defines which SecretStore to fetch the ExternalSecret data."
+    },
     "dockerregistry": {
       "type": "object",
       "description": "Docker registries authentication",
@@ -132,9 +170,28 @@
           "email": {
             "type": "string",
             "description": "Email"
+          },
+          "url": {
+            "type": "string",
+            "description": "URL, used only for external secret"
+          },
+          "externalUsername": {
+            "type": "string",
+            "description": "Key of the external secret for the username"
+          },
+          "externalPassword": {
+            "type": "string",
+            "description": "Key of the external secret for the password"
+          },
+          "externalEmail": {
+            "type": "string",
+            "description": "Key of the external secret for the email"
+          },
+          "externalUrl": {
+            "type": "string",
+            "description": "Key of the external secret for the URL"
           }
-        },
-        "required": ["username", "password"]
+        }
       }
     },
     "configMap": {

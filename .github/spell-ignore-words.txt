@@ -2,3 +2,9 @@ fullname
 Kubernetes
 ConfigMap
 YAML
+1h
+1m
+1s
+SecretStore
+ExternalSecret
+secretKey
