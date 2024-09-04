@@ -1,6 +1,8 @@
 nameOverride: ''
 fullnameOverride: ''
 
+external: false
+
 dockerregistry: {}
 #  registry-url:
 #    email: docker-hub@camptocamp.com

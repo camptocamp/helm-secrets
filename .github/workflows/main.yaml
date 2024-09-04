@@ -68,6 +68,11 @@ jobs:
       - name: Setup k3s/k3d
         run: c2cciutils-k8s-install
 
+      - name: Install external-secret CRD
+        run: |
+          curl https://raw.githubusercontent.com/external-secrets/external-secrets/main/deploy/crds/bundle.yaml --output /tmp/external-secrets-crd.yaml
+          kubectl apply -f /tmp/external-secrets-crd.yaml
+
       - name: Apply
         run: kubectl apply -f tests/expected.yaml
 

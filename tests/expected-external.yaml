@@ -1,0 +1,94 @@
+---
+# Source: secrets/templates/external-secret-docker-registry.yaml
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: custom-secrets-dockerregistry
+  labels:
+    helm.sh/chart: secrets
+    app.kubernetes.io/version: "1.0"
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: secrets
+    app.kubernetes.io/instance: custom
+    app.kubernetes.io/component: main
+  annotations:
+    testAnnotation: annotation value
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    kind: SecretStore
+    name: my-secret-store
+  target:
+    name: custom-secrets-dockerregistry
+    template:
+      type: kubernetes.io/dockerconfigjson
+      data:
+        .dockerconfigjson: |-
+          {
+            "auths": {
+              "{{ .docker.io-url }}": {
+                "auth": {{ ( printf "%s:%s" .docker.io-username .docker.io-password ) | b64enc | quote }},
+                "username": "{{ .docker.io-username }}",
+                "password": "{{ .docker.io-password }}",
+                "email": "{{ .docker.io-email }}"
+              },
+              "ghcr.io": {
+                "auth": "YzJjLWJvdC1naXMtY2k6MTIzNA==",
+                "username": "c2c-bot-gis-ci",
+                "password": "1234",
+                "email": "geospatial-bot@camptocamp.com"
+              },
+              "https://index.docker.io/v1/": {
+                "auth": "YzJjZ2lzYm90OjEyMzQ=",
+                "username": "c2cgisbot",
+                "password": "1234",
+                "email": "docker-hub@camptocamp.com"
+              },
+              "fix-end-comma": {"auth": ""}
+            }
+          }
+  data:
+    - secretKey: docker.io-username
+      remoteRef:
+        key: docker-username
+    - secretKey: docker.io-password
+      remoteRef:
+        key: docker-password
+    - secretKey: docker.io-email
+      remoteRef:
+        key: docker-email
+    - secretKey: docker.io-url
+      remoteRef:
+        key: docker-url
+---
+# Source: secrets/templates/external-secret.yaml
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: custom-secrets
+  labels:
+    helm.sh/chart: secrets
+    app.kubernetes.io/version: "1.0"
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: secrets
+    app.kubernetes.io/instance: custom
+    app.kubernetes.io/component: main
+  annotations:
+    testAnnotation: annotation value
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    kind: SecretStore
+    name: my-secret-store
+  target:
+    name: custom-secrets
+  data:
+    - secretKey: test
+      remoteRef:
+        key: toto
+    - secretKey: test2
+      remoteRef:
+        key: toto2
+    - secretKey: test3
+      remoteRef:
+        key: toto3

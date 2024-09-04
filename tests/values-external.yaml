@@ -1,0 +1,43 @@
+annotations:
+  testAnnotation: annotation value
+
+external: true
+metadata: false
+
+dockerregistryRefreshInterval: 1h
+dockerregistrySecretStoreRef:
+  name: my-secret-store
+  kind: SecretStore
+
+dockerregistry:
+  https://index.docker.io/v1/:
+    email: docker-hub@camptocamp.com
+    username: c2cgisbot
+    password: '1234'
+    url: https://index.docker.io/v1/
+  docker.io:
+    externalEmail: docker-email
+    externalUsername: docker-username
+    externalPassword: docker-password
+    externalUrl: docker-url
+  ghcr.io:
+    email: geospatial-bot@camptocamp.com
+    username: c2c-bot-gis-ci
+    password: '1234'
+    url: ghcr.io
+
+externalSecrets:
+  refreshInterval: 1h
+  secretStoreRef:
+    name: my-secret-store
+    kind: SecretStore
+  data:
+    test:
+      remoteRef:
+        key: toto
+    test2:
+      remoteRef:
+        key: toto2
+    test3:
+      remoteRef:
+        key: toto3

@@ -12,6 +12,13 @@
 - **`labels`**: Refer to _[#/definitions/labels](#definitions/labels)_.
 - **`annotations`**: Refer to _[#/definitions/annotations](#definitions/annotations)_.
 - **`metadata`** _(boolean)_: Generate a ConfigMap with some metadata related to the chart.
+- **`external`** _(boolean)_: Secrets from external sources.
+- **`externalSecrets`** _(object)_: Cannot contain additional properties.
+  - **`refreshInterval`** _(string)_: The refresh interval like 1h, 1m, 1s.
+  - **`secretStoreRef`** _(object)_: defines which SecretStore to fetch the ExternalSecret data.
+  - **`dataFrom`** _(array)_: used to fetch all properties from a specific Provider data.
+  - **`data`** _(object)_: Data defines the connection between the Kubernetes Secret keys and the Provider data. Can contain additional properties.
+    - **Additional properties** _(object)_: defines the connection between the Kubernetes Secret key and the Provider data. The map key became the secretKey.
 - **`secrets`** _(object)_: Secrets configuration. Can contain additional properties.
   - **Additional properties**
     - **One of**
@@ -22,11 +29,18 @@
         - **`type`** _(string)_: Type of the secret. Must be one of: `["basicAuth"]`.
         - **`user`** _(string)_: Username.
         - **`password`** _(string)_: Password.
+- **`dockerregistryRefreshInterval`** _(string)_: The refresh interval like 1h, 1m, 1s.
+- **`dockerregistrySecretStoreRef`** _(object)_: defines which SecretStore to fetch the ExternalSecret data.
 - **`dockerregistry`** _(object)_: Docker registries authentication. Can contain additional properties.
   - **Additional properties** _(object)_: Cannot contain additional properties.
-    - **`username`** _(string, required)_: Username.
-    - **`password`** _(string, required)_: Password.
+    - **`username`** _(string)_: Username.
+    - **`password`** _(string)_: Password.
     - **`email`** _(string)_: Email.
+    - **`url`** _(string)_: URL, used only for external secret.
+    - **`externalUsername`** _(string)_: Key of the external secret for the username.
+    - **`externalPassword`** _(string)_: Key of the external secret for the password.
+    - **`externalEmail`** _(string)_: Key of the external secret for the email.
+    - **`externalUrl`** _(string)_: Key of the external secret for the URL.
 - **`configMap`** _(object)_: ConfigMap configuration. Can contain additional properties.
   - **Additional properties**
     - **One of**
