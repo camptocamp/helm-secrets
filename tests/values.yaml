@@ -6,7 +6,8 @@ dockerregistry:
     email: docker-hub@camptocamp.com
     username: c2cgisbot
     password: '1234'
-  docker.io:
+  docker_io:
+    url: docker.io
     email: docker-hub@camptocamp.com
     username: c2cgisbot
     password: '1234'
