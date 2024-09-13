@@ -3,6 +3,19 @@ entries:
   secrets:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2024-09-13T12:41:29.568294824Z"
+    dependencies:
+    - name: common
+      repository: https://camptocamp.github.io/helm-common
+      version: 1.0.1
+    description: A chart to manage the application secrets
+    digest: 5e9ffc7a9811561cf76c0c85196fe641771a20b8a338495d542fa1bf1fc5d2aa
+    name: secrets
+    urls:
+    - https://github.com/camptocamp/helm-secrets/releases/download/1.2.2/secrets-1.2.2.tgz
+    version: 1.2.2
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2024-09-13T07:29:53.920928812Z"
     dependencies:
     - name: common
@@ -183,4 +196,4 @@ entries:
     urls:
     - https://github.com/camptocamp/helm-secrets/releases/download/0.1.1/secrets-0.1.1.tgz
     version: 0.1.1
-generated: "2024-09-13T07:29:53.921016987Z"
+generated: "2024-09-13T12:41:29.568408296Z"
