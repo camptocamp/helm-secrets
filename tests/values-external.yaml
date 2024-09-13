@@ -10,17 +10,17 @@ dockerregistrySecretStoreRef:
   kind: SecretStore
 
 dockerregistry:
-  https://index.docker.io/v1/:
+  docker_hub:
     email: docker-hub@camptocamp.com
     username: c2cgisbot
     password: '1234'
     url: https://index.docker.io/v1/
-  docker.io:
+  docker_io:
     externalEmail: docker-email
     externalUsername: docker-username
     externalPassword: docker-password
     externalUrl: docker-url
-  ghcr.io:
+  ghcr_io:
     email: geospatial-bot@camptocamp.com
     username: c2c-bot-gis-ci
     password: '1234'

@@ -26,11 +26,17 @@ spec:
         .dockerconfigjson: |-
           {
             "auths": {
-              "{{ .docker.io-url }}": {
-                "auth": {{ ( printf "%s:%s" .docker.io-username .docker.io-password ) | b64enc | quote }},
-                "username": "{{ .docker.io-username }}",
-                "password": "{{ .docker.io-password }}",
-                "email": "{{ .docker.io-email }}"
+              "https://index.docker.io/v1/": {
+                "auth": "YzJjZ2lzYm90OjEyMzQ=",
+                "username": "c2cgisbot",
+                "password": "1234",
+                "email": "docker-hub@camptocamp.com"
+              },
+              "{{ .docker_io_url }}": {
+                "auth": {{ ( printf "%s:%s" .docker_io_username .docker_io_password ) | b64enc | quote }},
+                "username": "{{ .docker_io_username }}",
+                "password": "{{ .docker_io_password }}",
+                "email": "{{ .docker_io_email }}"
               },
               "ghcr.io": {
                 "auth": "YzJjLWJvdC1naXMtY2k6MTIzNA==",
@@ -38,26 +44,20 @@ spec:
                 "password": "1234",
                 "email": "geospatial-bot@camptocamp.com"
               },
-              "https://index.docker.io/v1/": {
-                "auth": "YzJjZ2lzYm90OjEyMzQ=",
-                "username": "c2cgisbot",
-                "password": "1234",
-                "email": "docker-hub@camptocamp.com"
-              },
               "fix-end-comma": {"auth": ""}
             }
           }
   data:
-    - secretKey: docker.io-username
+    - secretKey: docker_io-username
       remoteRef:
         key: docker-username
-    - secretKey: docker.io-password
+    - secretKey: docker_io-password
       remoteRef:
         key: docker-password
-    - secretKey: docker.io-email
+    - secretKey: docker_io-email
       remoteRef:
         key: docker-email
-    - secretKey: docker.io-url
+    - secretKey: docker_io-url
       remoteRef:
         key: docker-url
 ---
