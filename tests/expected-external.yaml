@@ -48,16 +48,16 @@ spec:
             }
           }
   data:
-    - secretKey: docker_io-username
+    - secretKey: docker_io_username
       remoteRef:
         key: docker-username
-    - secretKey: docker_io-password
+    - secretKey: docker_io_password
       remoteRef:
         key: docker-password
-    - secretKey: docker_io-email
+    - secretKey: docker_io_email
       remoteRef:
         key: docker-email
-    - secretKey: docker_io-url
+    - secretKey: docker_io_url
       remoteRef:
         key: docker-url
 ---
